@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "./Navbar.scss";
+import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -18,8 +19,6 @@ const Navbar = () => {
   });
 
   const handleClick = () => {
-    console.log(toggleMenu);
-
     toggleMenu ? setToggleMenu(false) : setToggleMenu(true);
   };
 
@@ -32,7 +31,7 @@ const Navbar = () => {
       } ${toggleMenu && "show"} `}
     >
       <button onClick={handleClick} className="nav__burger">
-        ---
+        <MenuIcon />
       </button>
       <img src="./images/logo.png" className="nav__logo" alt="logo netflix" />
       <nav className="nav__links">
