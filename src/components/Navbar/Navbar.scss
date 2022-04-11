@@ -1,0 +1,87 @@
+.avatar {
+  width: 25px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  padding: 12px 4%;
+  font-size: 0.9rem;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(74, 74, 74, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+  transition: 0.3s ease-in-out;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &--black {
+    background: black;
+  }
+
+  &__burger {
+    cursor: pointer;
+    background-color: black;
+    margin-right: 1rem;
+    color: white;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    max-width: 100px;
+  }
+
+  &__links {
+    margin-left: 20px;
+    transition: background-color 0.3s ease-in-out;
+
+    .nav__link {
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+    @media screen and (max-width: 767px) {
+      margin-left: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 110%;
+      right: 0;
+      .show & {
+        display: flex;
+        flex-direction: column;
+        visibility: visible;
+        width: 100%;
+        height: calc(100vh - 60px);
+        top: 60px;
+        background-color: black;
+      }
+      .nav__link {
+        padding: 15px 4%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    .nav__action {
+      margin-left: 10px;
+      @media screen and (min-width: 768px) {
+        margin-left: 20px;
+      }
+    }
+  }
+}
